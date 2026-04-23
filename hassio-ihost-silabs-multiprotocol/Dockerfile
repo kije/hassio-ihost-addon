@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 ARG BUILD_ARCH
-FROM --platform=linux/amd64 debian:bullseye AS cross-builder-base
+FROM --platform=linux/amd64 debian:bookworm AS cross-builder-base
 
 ENV \
     LANG="C.UTF-8" \
@@ -28,6 +28,7 @@ COPY debian-armv7.cmake /usr/src/debian.cmake
 ENV DEBIAN_ARCH=armhf
 ENV DEBIAN_CROSS_PREFIX=arm-linux-gnueabihf
 ENV SLC_ARCH=linux_arch_32
+ENV SLC_WITHOUT=
 
 RUN \
     set -x \
@@ -43,6 +44,7 @@ COPY debian-arm64.cmake /usr/src/debian.cmake
 ENV DEBIAN_ARCH=arm64
 ENV DEBIAN_CROSS_PREFIX=aarch64-linux-gnu
 ENV SLC_ARCH=linux_arch_64
+ENV SLC_WITHOUT=
 
 RUN \
     set -x \
@@ -57,7 +59,8 @@ COPY debian-amd64.cmake /usr/src/debian.cmake
 
 ENV DEBIAN_ARCH=amd64 \
         DEBIAN_CROSS_PREFIX=x86_64-linux-gnu \
-        SLC_ARCH=zigbee_x86_64
+        SLC_ARCH=zigbee_x86_64 \
+        SLC_WITHOUT=zigbee_recommended_linux_arch
 
 RUN \
     set -x \
@@ -76,7 +79,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
        cmake \
        "libmbedtls-dev:${DEBIAN_ARCH}" \
-       "libmbedtls12:${DEBIAN_ARCH}" \
+       "libmbedtls14:${DEBIAN_ARCH}" \
     && git clone --depth 1 -b "${CPCD_VERSION}" \
        https://github.com/SiliconLabs/cpc-daemon.git \
     && mkdir $CPCD_DIR/build && cd $CPCD_DIR/build \
@@ -96,13 +99,20 @@ RUN \
        python3 \
        python3-jinja2 \
        python3-pip \
-       openjdk-17-jre \
        git-lfs \
+       gnupg \
        unzip \
+    && curl -s https://repos.azul.com/azul-repo.key | gpg --dearmor -o /usr/share/keyrings/azul.gpg \
+    && echo "deb [signed-by=/usr/share/keyrings/azul.gpg] https://repos.azul.com/zulu/deb stable main" > /etc/apt/sources.list.d/zulu.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+       zulu21-jre \
     && curl -O https://www.silabs.com/documents/login/software/slc_cli_linux.zip \
-    && unzip slc_cli_linux.zip \
-    && cd slc_cli/ && chmod +x slc
- 
+    && unzip -q slc_cli_linux.zip \
+    && rm slc_cli_linux.zip \
+    && cd slc_cli/ && chmod +x slc \
+    && ./slc --version
+
 ENV PATH="/usr/src/slc_cli/:$PATH"
 
 RUN \
@@ -125,6 +135,7 @@ RUN \
     && cd protocol/zigbee \
     && slc generate \
        --sdk=${GECKO_SDK} \
+       ${SLC_WITHOUT:+--without="${SLC_WITHOUT}"} \
        --with="${SLC_ARCH}" \
        --project-file=$(pwd)/app/projects/zigbeed/zigbeed.slcp \
        --export-destination=$(pwd)/app/projects/zigbeed/output \
@@ -145,7 +156,7 @@ RUN \
     set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-       libmbedtls12 \
+       libmbedtls14 \
        socat \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /usr/src/*
@@ -199,7 +210,7 @@ RUN \
        python3-cryptography \
        python3-yarl \
        lsb-release \
-       netcat \
+       netcat-openbsd \
        sudo \
     && cd ot-br-posix \
     && ln -s ../../../openthread/ third_party/openthread/repo \
@@ -236,7 +247,7 @@ RUN \
         -DOTBR_BACKBONE_ROUTER=ON \
         -DOTBR_DUA_ROUTING=ON \
         && cd build/otbr/ \
-        && ninja \
+        && (ninja -k 10 -j 2 || ninja -j 1) \
         && ninja install) \
     && apt-get purge -y --auto-remove \
        build-essential \
