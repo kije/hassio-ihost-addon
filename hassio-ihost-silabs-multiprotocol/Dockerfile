@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 ARG BUILD_ARCH
-FROM --platform=linux/amd64 debian:bullseye AS cross-builder-base
+FROM --platform=linux/amd64 debian:bookworm AS cross-builder-base
 
 ENV \
     LANG="C.UTF-8" \
@@ -76,7 +76,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
        cmake \
        "libmbedtls-dev:${DEBIAN_ARCH}" \
-       "libmbedtls12:${DEBIAN_ARCH}" \
+       "libmbedtls14:${DEBIAN_ARCH}" \
     && git clone --depth 1 -b "${CPCD_VERSION}" \
        https://github.com/SiliconLabs/cpc-daemon.git \
     && mkdir $CPCD_DIR/build && cd $CPCD_DIR/build \
@@ -152,7 +152,7 @@ RUN \
     set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-       libmbedtls12 \
+       libmbedtls14 \
        socat \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /usr/src/*
