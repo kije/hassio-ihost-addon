@@ -5,16 +5,9 @@ on:
     paths:
       - "hassio-ihost-silabs-multiprotocol/**"
       - "hassio-ihost-openthread-border-router/**"
-      - "hassio-ihost-matter-server/**"
-      - "hassio-ihost-esphome/**"
-      - "hassio-ihost-node-red/**"
-      - "hassio-ihost-ssh/**"
       - "hassio-ihost-ewelink-smart-home/**"
       - "hassio-ihost-ewelink-remote/**"
       - "hassio-ihost-sonoff-dongle-flasher/**"
-      - "hassio-ihost-zigbee2mqtt/**"
-      - "hassio-ihost-matter-bridge-addon/**"
-      - "hassio-ihost-hardware-control/**"
       - ".github/workflows/build.yml"
   workflow_dispatch:
 
@@ -33,26 +26,12 @@ jobs:
             image: "hassio-ihost-silabs-multiprotocol-{arch}"
           - addon: hassio-ihost-openthread-border-router
             image: "openthread-border-router-{arch}"
-          - addon: hassio-ihost-matter-server
-            image: "hassio-ihost-matter-server-{arch}"
-          - addon: hassio-ihost-esphome
-            image: "esphome-hassio-{arch}"
-          - addon: hassio-ihost-node-red
-            image: "hassio-ihost-node-red-{arch}"
-          - addon: hassio-ihost-ssh
-            image: "hassio-ihost-ssh-{arch}"
           - addon: hassio-ihost-ewelink-smart-home
             image: "hassio-ihost-ewelink-smart-home-{arch}"
           - addon: hassio-ihost-ewelink-remote
             image: "hassio-ihost-ewelink-remote-{arch}"
           - addon: hassio-ihost-sonoff-dongle-flasher
             image: "hassio-ihost-sonoff-dongle-flasher-{arch}"
-          - addon: hassio-ihost-zigbee2mqtt
-            image: "hassio-ihost-zigbee2mqtt-{arch}"
-          - addon: hassio-ihost-matter-bridge-addon
-            image: "hassio-ihost-matter-bridge-{arch}"
-          - addon: hassio-ihost-hardware-control
-            image: "hassio-ihost-hardware-control-{arch}"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
