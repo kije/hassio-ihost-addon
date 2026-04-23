@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - "hassio-ihost-silabs-multiprotocol/**"
-      - "hassio-ihost-openthread-border-router/**"
       - "hassio-ihost-ewelink-smart-home/**"
       - "hassio-ihost-ewelink-remote/**"
       - "hassio-ihost-sonoff-dongle-flasher/**"
@@ -24,8 +23,6 @@ jobs:
         include:
           - addon: hassio-ihost-silabs-multiprotocol
             image: "hassio-ihost-silabs-multiprotocol-{arch}"
-          - addon: hassio-ihost-openthread-border-router
-            image: "openthread-border-router-{arch}"
           - addon: hassio-ihost-ewelink-smart-home
             image: "hassio-ihost-ewelink-smart-home-{arch}"
           - addon: hassio-ihost-ewelink-remote
