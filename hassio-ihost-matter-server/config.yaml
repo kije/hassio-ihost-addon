@@ -6,7 +6,6 @@ description: Matter WebSocket Server for Home Assistant Matter support.
 url: >-
   https://github.com/home-assistant/addons/tree/master/matter_server
 arch:
-  - armv7
   - aarch64
 discovery:
   - matter

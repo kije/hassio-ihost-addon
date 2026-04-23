@@ -1,9 +1,8 @@
 # Home Assistant Add-on: Matter Server
 
-![Supports armv7 Architecture](https://img.shields.io/badge/armv7-yes-green.svg)
 ![Supports aarch64 Architecture](https://img.shields.io/badge/aarch64-yes-green.svg)
 
-This repository provides **custom-built Matter Server add-ons and container images for armv7** which are not supported by the official Matter Server distribution.
+This repository provides **custom-built Matter Server add-ons and container images for aarch64** which are not supported by the official Matter Server distribution.
 
 ## Prerequisites
 
