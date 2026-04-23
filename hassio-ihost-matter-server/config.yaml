@@ -7,6 +7,7 @@ url: >-
   https://github.com/home-assistant/addons/tree/master/matter_server
 arch:
   - armv7
+  - aarch64
 discovery:
   - matter
 hassio_api: true
@@ -15,7 +16,7 @@ homeassistant: 2024.6.0
 host_ipc: false
 host_network: true
 host_dbus: true
-image: ghcr.io/ihost-open-source-project/armv7-addon-matter-server
+image: ghcr.io/kije/hassio-ihost-matter-server-{arch}
 ingress: true
 ingress_port: 5580
 init: false

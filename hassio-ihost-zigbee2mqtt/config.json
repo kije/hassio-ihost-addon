@@ -15,7 +15,8 @@
   ],
   "hassio_api": true,
   "arch": [
-    "armv7"
+    "armv7",
+    "aarch64"
   ],
   "boot": "auto",
   "init": false,
@@ -85,5 +86,5 @@
     "watchdog": "str?",
     "force_onboarding": "bool?"
   },
-  "image": "ghcr.io/juliusrickert/hassio-ihost-zigbee2mqtt-{arch}"
+  "image": "ghcr.io/kije/hassio-ihost-zigbee2mqtt-{arch}"
 }

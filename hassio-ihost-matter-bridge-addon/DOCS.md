@@ -22,21 +22,21 @@ Skip this step and simply proceed to the Add-on Store to install the required ad
 #### Via URL
 
 -   Navigate to **Settings > Add-on Store> Click the three-dot menu (⋮) in the top right corner and select Repositories**.
--   Enter the repository URL into the input box: [<u>https://github.com/iHost-Open-Source-Project/hassio-ihost-addon</u>](https://github.com/iHost-Open-Source-Project/hassio-ihost-addon)
+-   Enter the repository URL into the input box: [<u>https://github.com/kije/hassio-ihost-addon</u>](https://github.com/kije/hassio-ihost-addon)
 
 #### Via Button Clicking
 
--   Click this button [![Add Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FiHost-Open-Source-Project%2Fhassio-ihost-addon) to add the add-on automatically.
+-   Click this button [![Add Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fkije%2Fhassio-ihost-addon) to add the add-on automatically.
 
 ### Install Matter Bridge Add-on
 
 1. Search for **Matter Bridge** in the Add-ons Store.
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/search.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/search.png)
 
 2. Click **Install**.
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/install.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/install.png)
 
 3. Wait for the installation to complete.
 
@@ -44,15 +44,15 @@ Skip this step and simply proceed to the Add-on Store to install the required ad
 
 After installation, click **Start** to launch the add-on. Wait until the service has fully started before proceeding.
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-addon.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-addon.png)
 
 ## Use the Matter Bridge Add-on to sync Home Assistant devices to Matter Fabrics
 
 1. Click **Open WEB UI** to access the Matter Bridge Pairing page.  
    Click **Start** to view the preparation for Matter Bridge pairing.  
-   ![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-1.png)  
-   ![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-2.png)  
-   ![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-3.png)
+   ![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-1.png)  
+   ![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-2.png)  
+   ![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/start-3.png)
 2. Follow the instructions to add Home Assistant as a Matter Bridge and sync its devices to the connected Matter Fabrics.
 
 -   Click **Start Pairing**.
@@ -92,10 +92,10 @@ Due to differences in how the Matter standard is implemented across smart home p
    If a previously synced device is removed and later re-synced, it may fail to appear immediately in the SmartThings app. Restarting the SmartThings Hub is necessary to resolve this issue.
 
 
-![image](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/refs/heads/master/hassio-ihost-matter-bridge-addon/images/support-devices.png)
+![image](https://raw.githubusercontent.com/kije/hassio-ihost-addon/refs/heads/master/hassio-ihost-matter-bridge-addon/images/support-devices.png)
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/qr-code.png)  
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/add-success.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/qr-code.png)  
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/add-success.png)
 
 ## Manage Connected Fabric
 
@@ -104,18 +104,18 @@ After pairing the Matter Bridge, all the connected Matter Fabrics will be shown 
 -   Click to **remove** the connected Matter Fabric that accesses your Matter Bridge and its bridged devices.
 -   Click **Remove All** on the right can remove all connected Matter Fabrics.
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/remove-all.png)
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/remove-all-confirm.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/remove-all.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/remove-all-confirm.png)
 
 ## **<font style="color:#000000;">Manage entities that need to be synced to the Matter platform</font>**
 
 Click **Device List** in the top right corner to access the list of supported and not-supported Home Assistant devices for syncing to Matter Fabrics.  
 
 -   Click **Edit** next to the **Supported Devices** list
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/device-list-1.png)  
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/device-list-1.png)  
 
 
 -   Select entities you want to sync, or uncheck them to remove from the connected Matter Fabrics.
 -   Click **Save**.
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/device-list-2.png)  
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/device-list-3.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/device-list-2.png)  
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-matter-bridge-addon/images/device-list-3.png)

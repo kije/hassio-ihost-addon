@@ -6,6 +6,7 @@ on:
     paths:
       - "hassio-ihost-silabs-multiprotocol/**"
       - "hassio-ihost-openthread-border-router/**"
+      - "hassio-ihost-matter-server/**"
   workflow_dispatch:
 
 jobs:
@@ -21,7 +22,9 @@ jobs:
           - addon: hassio-ihost-silabs-multiprotocol
             image: "hassio-ihost-silabs-multiprotocol-{arch}"
           - addon: hassio-ihost-openthread-border-router
-            image: "openthread-border-router"
+            image: "openthread-border-router-{arch}"
+          - addon: hassio-ihost-matter-server
+            image: "hassio-ihost-matter-server-{arch}"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,5 +43,5 @@ jobs:
             --all
             --target /data/${{ matrix.addon }}
             --image "${{ matrix.image }}"
-            --docker-hub "ghcr.io/juliusrickert"
+            --docker-hub "ghcr.io/kije"
             --docker-hub-check

@@ -6,7 +6,7 @@ ZBDongle-E (EFR32MG21).Before using this add-on, you must first flash the MultiP
 via [SONOFF Dongle Flasher][sonoff-dongle-flasher]. Another option is flashing firmware 
 via [SONOFF Dongle Flasher Add-on][dongle-flasher-addon].
 
-[![Open your Home Assistant instance and show the dashboard of an add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=81bc2df9_sonoff_dongle_flasher_for_ihost&repository_url=https%3A%2F%2Fgithub.com%2FiHost-Open-Source-Project%2Fhassio-ihost-addon)
+[![Open your Home Assistant instance and show the dashboard of an add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=81bc2df9_sonoff_dongle_flasher_for_ihost&repository_url=https%3A%2F%2Fgithub.com%2Fkije%2Fhassio-ihost-addon)
 
 ## Installation
 
@@ -14,12 +14,12 @@ Follow these steps to get the add-on installed on your system:
 
 1. Add Silicon Labs Multiprotocol Add-on to Repositories
       - Go to the Add-on Store → Click the More button (⋮) in the upper-right corner → Select Repositories
-        Paste the following URL:https://github.com/iHost-Open-Source-Project/hassio-ihost-addon
+        Paste the following URL:https://github.com/kije/hassio-ihost-addon
       - Or, simply click the button below to add it automatically:
 
-      [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FiHost-Open-Source-Project%2Fhassio-ihost-addon)
+      [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fkije%2Fhassio-ihost-addon)
       
-      ![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_1.png)
+      ![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_1.png)
 
 2. Install Silicon Labs Multiprotocol(Mod) Add-on
       - Search for Silicon Labs Multiprotocol(Mod) Add-on in the Add-ons Store.
@@ -38,7 +38,7 @@ Once the firmware is loaded follow the following steps:
 
 **NOTE:** the Web frontend is only accessible when OpenThread is enabled (see below).
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_2.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_2.png)
 
 ### Zigbee
 
@@ -62,9 +62,9 @@ To use Zigbee with Z2M configure the Integration as follows:
 5. After completing the configuration,start the Zigbee2MQTT add-on. Wait for about two minutes,
  then you can click to enter the Web UI Console to add and manage devices.
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_3.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_3.png)
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_4.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/description-picture_4.png)
 ### OpenThread
 
 At this point OpenThread support is experimental. This add-on makes your Home
@@ -106,7 +106,7 @@ Add-on configuration:
 The add-on runs several service internally. This architecture diagram shows what
 the add-on currently implements.
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/architecture.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-silabs-multiprotocol/images/architecture.png)
 
 ## Support
 
@@ -121,6 +121,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://dongle.sonoff.tech
 [reddit]: https://www.reddit.com/r/sonoffdongle
-[issue]: https://github.com/iHost-Open-Source-Project/hassio-ihost-addon/issues
+[issue]: https://github.com/kije/hassio-ihost-addon/issues
 [sonoff-dongle-flasher]: https://dongle.sonoff.tech/sonoff-dongle-flasher
-[dongle-flasher-addon]: https://github.com/iHost-Open-Source-Project/hassio-ihost-addon/blob/master/hassio-ihost-sonoff-dongle-flasher/DOCS.md
+[dongle-flasher-addon]: https://github.com/kije/hassio-ihost-addon/blob/master/hassio-ihost-sonoff-dongle-flasher/DOCS.md

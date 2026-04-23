@@ -2,6 +2,7 @@
 url: https://esphome.io/
 arch:
 - armv7
+- aarch64
 hassio_api: true
 auth_api: true
 host_network: true
@@ -35,4 +36,4 @@ version: 2025.6.3
 slug: esphome
 description: Build your own smart home devices using ESPHome, no programming experience
   required
-image: ghcr.io/juliusrickert/esphome-hassio
+image: ghcr.io/kije/esphome-hassio-{arch}

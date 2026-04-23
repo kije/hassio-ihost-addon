@@ -22,7 +22,7 @@ If you are using Home Assistant Yellow, choose `/dev/ttyAMA1` as device.
 >
 > When using the iHost’s built-in **MG21** chip (located at `/dev/ttyS4`) with this add-on, **hardware flow control must be disabled** for the OpenThread Border Router to function properly.
 
-![](https://raw.githubusercontent.com/iHost-Open-Source-Project/hassio-ihost-addon/master/hassio-ihost-openthread-border-router/images/otbr_configuration.png)
+![](https://raw.githubusercontent.com/kije/hassio-ihost-addon/master/hassio-ihost-openthread-border-router/images/otbr_configuration.png)
 
 ### Alternative radios
 
