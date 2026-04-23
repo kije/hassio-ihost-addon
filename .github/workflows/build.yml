@@ -2,7 +2,6 @@ name: Build Add-on Images
 
 on:
   push:
-    branches: [master]
     paths:
       - "hassio-ihost-silabs-multiprotocol/**"
       - "hassio-ihost-openthread-border-router/**"

@@ -1,4 +1,4 @@
 ---
 build_from:
-  armv7: ghcr.io/esphome/esphome-hassio:2025.6.3
-  aarch64: ghcr.io/esphome/esphome-hassio:2025.6.3
+  armv7: ghcr.io/esphome/esphome-hassio:2026.4.2
+  aarch64: ghcr.io/esphome/esphome-hassio:2026.4.2
