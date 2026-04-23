@@ -63,11 +63,29 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Compute arch flags from addon config
+        id: arch
+        run: |
+          cd "${{ matrix.addon }}"
+          if [ -f config.yaml ]; then
+            archs=$(yq -r '.arch[]' config.yaml)
+          elif [ -f config.yml ]; then
+            archs=$(yq -r '.arch[]' config.yml)
+          else
+            archs=$(jq -r '.arch[]' config.json)
+          fi
+          flags=""
+          for a in $archs; do
+            flags="$flags --$a"
+          done
+          echo "Addon ${{ matrix.addon }} arches:$flags"
+          echo "flags=$flags" >> "$GITHUB_OUTPUT"
+
       - name: Build ${{ matrix.addon }}
         uses: home-assistant/builder@2024.03.5
         with:
           args: >-
-            --all
+            ${{ steps.arch.outputs.flags }}
             --target /data/${{ matrix.addon }}
             --image "${{ matrix.image }}"
             --docker-hub "ghcr.io/kije"
