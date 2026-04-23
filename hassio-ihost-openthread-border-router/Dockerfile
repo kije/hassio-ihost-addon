@@ -23,7 +23,8 @@ COPY openthread-core-ha-config-posix.h /usr/src
 ENV OTBR_BUILD_DEPS build-essential ninja-build cmake wget ca-certificates \
   libreadline-dev libncurses-dev libcpputest-dev libdbus-1-dev libavahi-common-dev \
   libavahi-client-dev libboost-dev libboost-filesystem-dev libboost-system-dev \
-  libnetfilter-queue-dev
+  libnetfilter-queue-dev \
+  python3-dev libffi-dev pkg-config
 
 # Installed during build (script/bootstrap) but unused in our configuration
 ENV OTBR_UNUSED_DEBS libavahi-client3 avahi-daemon rsyslog
@@ -38,7 +39,10 @@ RUN \
     && apt-get install -y --no-install-recommends \
        iproute2 \
        python3 \
+       python3-dev \
        python3-pip \
+       libffi-dev \
+       pkg-config \
        lsb-release \
        netcat-openbsd \
        socat \
