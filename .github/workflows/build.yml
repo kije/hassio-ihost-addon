@@ -15,6 +15,7 @@ on:
       - "hassio-ihost-zigbee2mqtt/**"
       - "hassio-ihost-matter-bridge-addon/**"
       - "hassio-ihost-hardware-control/**"
+      - ".github/workflows/build.yml"
   workflow_dispatch:
 
 jobs:
