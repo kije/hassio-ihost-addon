@@ -4,9 +4,6 @@ on:
   push:
     paths:
       - "hassio-ihost-silabs-multiprotocol/**"
-      - "hassio-ihost-ewelink-smart-home/**"
-      - "hassio-ihost-ewelink-remote/**"
-      - "hassio-ihost-sonoff-dongle-flasher/**"
       - ".github/workflows/build.yml"
   workflow_dispatch:
 
@@ -23,12 +20,6 @@ jobs:
         include:
           - addon: hassio-ihost-silabs-multiprotocol
             image: "hassio-ihost-silabs-multiprotocol-{arch}"
-          - addon: hassio-ihost-ewelink-smart-home
-            image: "hassio-ihost-ewelink-smart-home-{arch}"
-          - addon: hassio-ihost-ewelink-remote
-            image: "hassio-ihost-ewelink-remote-{arch}"
-          - addon: hassio-ihost-sonoff-dongle-flasher
-            image: "hassio-ihost-sonoff-dongle-flasher-{arch}"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
