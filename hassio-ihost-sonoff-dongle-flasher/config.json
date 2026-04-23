@@ -5,7 +5,7 @@
     "description": "SONOFF Dongle Flasher supports online firmware flashing for the iHost MG21 chip and the SONOFF Dongle series (ZBDongle-P, ZBDongle-E, Dongle-M, Dongle-PMG24, Dongle-LMG21 and Dongle-PZG23)",
     "uart": true,
     "udev": true,
-    "url": "https://github.com/juliusrickert/hassio-ihost-addon/tree/master/hassio-ihost-sonoff-dongle-flasher",
+    "url": "https://github.com/kije/hassio-ihost-addon/tree/master/hassio-ihost-sonoff-dongle-flasher",
     "startup": "application",
     "boot": "auto",
     "arch": ["armv7", "aarch64", "amd64"],
@@ -42,5 +42,5 @@
     "schema": {
         "data_path": "str"
     },
-    "image": "ghcr.io/juliusrickert/hassio-ihost-sonoff-dongle-flasher-{arch}"
+    "image": "ghcr.io/kije/hassio-ihost-sonoff-dongle-flasher-{arch}"
 }

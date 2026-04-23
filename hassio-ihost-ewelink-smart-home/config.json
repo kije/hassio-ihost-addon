@@ -3,7 +3,7 @@
     "version": "1.0.4",
     "slug": "ewelink_smart_home_for_homeassistant_slug",
     "description": "Integrate eWeLink with Home Assistant via MQTT",
-    "url": "https://github.com/juliusrickert/hassio-ihost-addon",
+    "url": "https://github.com/kije/hassio-ihost-addon",
     "startup": "application",
     "boot": "auto",
     "arch": ["armv7", "aarch64", "amd64"],
@@ -37,6 +37,6 @@
             "password": "str?"
         }
     },
-    "image": "ghcr.io/juliusrickert/hassio-ihost-ewelink-smart-home-{arch}",
+    "image": "ghcr.io/kije/hassio-ihost-ewelink-smart-home-{arch}",
     "homeassistant": "2025.9.2"
 }
