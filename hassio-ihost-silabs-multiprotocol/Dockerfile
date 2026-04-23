@@ -243,7 +243,7 @@ RUN \
         -DOTBR_BACKBONE_ROUTER=ON \
         -DOTBR_DUA_ROUTING=ON \
         && cd build/otbr/ \
-        && ninja \
+        && (ninja -k 10 -j "$(nproc)" || ninja -j 2 || ninja -j 1) \
         && ninja install) \
     && apt-get purge -y --auto-remove \
        build-essential \
