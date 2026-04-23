@@ -206,7 +206,7 @@ RUN \
        python3-cryptography \
        python3-yarl \
        lsb-release \
-       netcat \
+       netcat-openbsd \
        sudo \
     && cd ot-br-posix \
     && ln -s ../../../openthread/ third_party/openthread/repo \
