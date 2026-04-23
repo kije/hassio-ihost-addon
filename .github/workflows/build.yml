@@ -58,6 +58,35 @@ jobs:
           echo "Addon ${{ matrix.addon }} arches:$flags"
           echo "flags=$flags" >> "$GITHUB_OUTPUT"
 
+      # home-assistant/builder@2024.03.5 hardcodes a 'docker run --rm --privileged
+      # multiarch/qemu-user-static --reset -p yes' at startup, which pins QEMU to the
+      # January 2023 v7.2.0-1 image (the 'latest' tag hasn't been pushed since).
+      # QEMU 7.2 is known to SIGSEGV cc1plus when compiling template-heavy modern
+      # C++ under aarch64 user-mode emulation — exactly what OTBR does in the
+      # silabs-multiprotocol build.
+      #
+      # Register modern QEMU via tonistiigi/binfmt FIRST, then shadow the
+      # multiarch/qemu-user-static:latest image with a local no-op so builder's
+      # --reset step can't clobber our binfmt entries.
+      - name: Register modern QEMU binfmt handlers
+        if: matrix.addon == 'hassio-ihost-silabs-multiprotocol'
+        uses: docker/setup-qemu-action@v3
+        with:
+          image: tonistiigi/binfmt:qemu-v9.2.0
+
+      - name: Shadow multiarch/qemu-user-static with a no-op
+        if: matrix.addon == 'hassio-ihost-silabs-multiprotocol'
+        run: |
+          set -euo pipefail
+          # Build a tiny local image that accepts any args and exits 0, tagged
+          # so home-assistant/builder's 'docker run multiarch/qemu-user-static
+          # --reset -p yes' becomes a silent no-op. Our modern binfmt_misc
+          # registrations from the previous step survive.
+          docker build -t multiarch/qemu-user-static:latest - <<'EOF'
+          FROM busybox:stable
+          ENTRYPOINT ["/bin/true"]
+          EOF
+
       - name: Build ${{ matrix.addon }}
         uses: home-assistant/builder@2024.03.5
         with:
