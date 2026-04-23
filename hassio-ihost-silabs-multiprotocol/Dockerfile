@@ -90,8 +90,6 @@ FROM --platform=linux/amd64 cross-builder-${BUILD_ARCH} AS zigbeed-builder
 
 ARG GECKO_SDK_VERSION
 
-COPY slc_cli_linux.zip /usr/src/slc_cli_linux.zip
-
 RUN \
     set -x \
     && apt-get install -y --no-install-recommends \
