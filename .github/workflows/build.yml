@@ -25,6 +25,7 @@ jobs:
       contents: read
       packages: write
     strategy:
+      fail-fast: false
       matrix:
         include:
           - addon: hassio-ihost-silabs-multiprotocol
