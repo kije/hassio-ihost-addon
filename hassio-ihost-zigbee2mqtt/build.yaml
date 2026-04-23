@@ -1,0 +1,4 @@
+---
+build_from:
+  armv7: ghcr.io/ihost-open-source-project/hassio-ihost-zigbee2mqtt-armv7:2.6.3-1
+  aarch64: ghcr.io/ihost-open-source-project/hassio-ihost-zigbee2mqtt-aarch64:2.6.3-1
