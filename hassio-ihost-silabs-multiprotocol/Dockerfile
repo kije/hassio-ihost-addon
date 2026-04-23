@@ -57,7 +57,7 @@ COPY debian-amd64.cmake /usr/src/debian.cmake
 
 ENV DEBIAN_ARCH=amd64 \
         DEBIAN_CROSS_PREFIX=x86_64-linux-gnu \
-        SLC_ARCH=zigbee_x86_64
+        SLC_ARCH=linux_arch_64
 
 RUN \
     set -x \
