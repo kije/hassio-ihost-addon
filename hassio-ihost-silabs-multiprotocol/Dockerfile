@@ -28,6 +28,7 @@ COPY debian-armv7.cmake /usr/src/debian.cmake
 ENV DEBIAN_ARCH=armhf
 ENV DEBIAN_CROSS_PREFIX=arm-linux-gnueabihf
 ENV SLC_ARCH=linux_arch_32
+ENV SLC_WITHOUT=
 
 RUN \
     set -x \
@@ -43,6 +44,7 @@ COPY debian-arm64.cmake /usr/src/debian.cmake
 ENV DEBIAN_ARCH=arm64
 ENV DEBIAN_CROSS_PREFIX=aarch64-linux-gnu
 ENV SLC_ARCH=linux_arch_64
+ENV SLC_WITHOUT=
 
 RUN \
     set -x \
@@ -57,7 +59,8 @@ COPY debian-amd64.cmake /usr/src/debian.cmake
 
 ENV DEBIAN_ARCH=amd64 \
         DEBIAN_CROSS_PREFIX=x86_64-linux-gnu \
-        SLC_ARCH=linux_arch_64
+        SLC_ARCH=zigbee_x86_64 \
+        SLC_WITHOUT=zigbee_recommended_linux_arch
 
 RUN \
     set -x \
@@ -132,6 +135,7 @@ RUN \
     && cd protocol/zigbee \
     && slc generate \
        --sdk=${GECKO_SDK} \
+       ${SLC_WITHOUT:+--without="${SLC_WITHOUT}"} \
        --with="${SLC_ARCH}" \
        --project-file=$(pwd)/app/projects/zigbeed/zigbeed.slcp \
        --export-destination=$(pwd)/app/projects/zigbeed/output \
