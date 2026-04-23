@@ -105,7 +105,8 @@ RUN \
     && apt-get install -y --no-install-recommends \
        zulu21-jre \
     && curl -O https://www.silabs.com/documents/login/software/slc_cli_linux.zip \
-    && unzip slc_cli_linux.zip \
+    && unzip -q slc_cli_linux.zip \
+    && rm slc_cli_linux.zip \
     && cd slc_cli/ && chmod +x slc \
     && ./slc --version
 
