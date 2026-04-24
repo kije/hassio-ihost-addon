@@ -1,7 +1,24 @@
-# Hassio iHost Add-ons
+# Home Assistant Silicon Labs Multiprotocol (maintained fork)
 
 ## About
-This repository contains a set of Home Assistant add-ons developed specifically for **SONOFF iHost**.
+
+This repository is a narrowly-scoped fork that ships a single add-on:
+**Silicon Labs Multiprotocol** (Zigbee + OpenThread on one SiLabs radio).
+The official Home Assistant [`silabs-multiprotocol`](https://github.com/home-assistant/addons/tree/master/silabs-multiprotocol)
+add-on is marked `stage: deprecated` upstream and no longer receives
+updates. This fork tracks modern Simplicity SDK (v2024.12.1-0), CPC
+daemon v4.6.1, Thread 1.4, and supports `armv7`, `aarch64`, and `amd64`.
+
+For the other iHost-specific or upstream-covered add-ons that used to
+live here, use the original sources:
+
+| Add-on | Where to install from |
+|---|---|
+| eWeLink Smart Home, eWeLink-Remote Gateway, SONOFF Dongle Flasher, iHost Hardware Control, iHost Matter Bridge | [`github.com/iHost-Open-Source-Project/hassio-ihost-addon`](https://github.com/iHost-Open-Source-Project/hassio-ihost-addon) |
+| SSH & Web Terminal, Node-RED, ESPHome | [Official Home Assistant Community Add-ons](https://github.com/hassio-addons) / upstream repos |
+| Zigbee2MQTT | [`github.com/zigbee2mqtt/hassio-zigbee2mqtt`](https://github.com/zigbee2mqtt/hassio-zigbee2mqtt) |
+| OpenThread Border Router | [`github.com/home-assistant/addons/openthread_border_router`](https://github.com/home-assistant/addons/tree/master/openthread_border_router) |
+| Matter Server | [`github.com/home-assistant/addons/matter_server`](https://github.com/home-assistant/addons/tree/master/matter_server) |
 
 ## Installation
 1. Go to the Add-on Store → Click the **More** button (⋮) in the upper-right corner → Select **Repositories**  

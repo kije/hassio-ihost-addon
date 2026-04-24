@@ -246,6 +246,9 @@ RUN \
         -DOTBR_REST=ON \
         -DOTBR_BACKBONE_ROUTER=ON \
         -DOTBR_DUA_ROUTING=ON \
+        -DOTBR_NAT64=ON \
+        -DOTBR_DNS_UPSTREAM_QUERY=ON \
+        -DOT_POSIX_NAT64_CIDR="64:ff9b::/96" \
         && cd build/otbr/ \
         && (ninja -k 10 -j 2 || ninja -j 1) \
         && ninja install) \
